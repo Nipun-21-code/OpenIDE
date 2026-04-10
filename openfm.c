@@ -1,3 +1,5 @@
+//this only works for ubuntu!
+
 #include <ncurses.h>
 #include <dirent.h>
 #include <sys/stat.h>
