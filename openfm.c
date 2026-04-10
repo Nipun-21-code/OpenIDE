@@ -82,13 +82,6 @@ int selected_for_move[MAX_ENTRIES] = {0};
 int move_count = 0;
 
 typedef struct {
-    char name[256];
-    char path[MAX_PATH];
-    int is_dir;
-    off_t size;
-} Entry;
-
-typedef struct {
     char display[512];
     char path[MAX_PATH];
     int type; // 0=folder, 1=filename, 2=content match
@@ -119,6 +112,13 @@ int compare_entries(const void *a, const void *b) {
     if (!ea->is_dir && eb->is_dir) return 1;
     return strcmp(ea->name, eb->name);
 }
+
+typedef struct {
+    char name[256];
+    char path[MAX_PATH];
+    int is_dir;
+    off_t size;
+} Entry;
 
 void duplicate_entry() {
     // Check if we have a valid selection
