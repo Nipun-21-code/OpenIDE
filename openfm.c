@@ -99,18 +99,18 @@ int search_result_count = 0;
 int search_selected = 0;
 int search_scroll = 0;
 
-void format_size(off_t size, char *buf) {
-    if (size < 1024) sprintf(buf, "%ldB", size);
-    else if (size < 1024*1024) sprintf(buf, "%.1fK", size/1024.0);
-    else if (size < 1024*1024*1024) sprintf(buf, "%.1fM", size/(1024.0*1024));
-    else sprintf(buf, "%.2fG", size/(1024.0*1024*1024));
-}
-
 int compare_entries(const void *a, const void *b) {
     Entry *ea = (Entry*)a, *eb = (Entry*)b;
     if (ea->is_dir && !eb->is_dir) return -1;
     if (!ea->is_dir && eb->is_dir) return 1;
     return strcmp(ea->name, eb->name);
+}
+
+void format_size(off_t size, char *buf) {
+    if (size < 1024) sprintf(buf, "%ldB", size);
+    else if (size < 1024*1024) sprintf(buf, "%.1fK", size/1024.0);
+    else if (size < 1024*1024*1024) sprintf(buf, "%.1fM", size/(1024.0*1024));
+    else sprintf(buf, "%.2fG", size/(1024.0*1024*1024));
 }
 
 typedef struct {
