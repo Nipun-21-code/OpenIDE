@@ -1,4 +1,4 @@
--- currently only works in ubuntu.
+-- currently only works in ubuntu. PLEASE USE WSL TO TEST VIA WINDOWS
 
 //OpenFM// is a simple, lightweight terminal file manager written purely in C. the c file can be downloaded anywhere on the system and shall be compiled in the directory with gcc OpenFM.c -lncurses -o openfm ; (make sure ncurses is installed on the system). After which it can be made a system binary for ease of use. 
 OpenFM is NOT a toy project, but is a real tool allowing easy deletion and creation of files, folders, ease in navigating directories and editting of files using micro (if present on the system, otherwise defaulting to nano) all from within the terminal session. One can also configure other terminal editors with OpenFM in the code. this helps use the terminal effectively as a holistic IDE. 
